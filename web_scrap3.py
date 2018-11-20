@@ -71,8 +71,8 @@ table_name=raw_input("Enter Table name To store Scrapped Data::")
 
 #Saving DataFrame to Database
 engine = create_engine("mysql+pymysql://{user}:{pw}@localhost/{db}"
-                       .format(user="root",
-                               pw="",
+                       .format(user="root",#username
+                               pw="",#password
                                db="web_scrapped_data"))
 df.to_sql(con=engine, name=table_name, if_exists='replace')
 
